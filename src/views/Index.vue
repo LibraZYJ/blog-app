@@ -5,9 +5,10 @@
 				<h2>发现文章</h2>
 				<div class="left card bl-card-article bl-shadow" v-for="(article, index) in articles" :key="index">
 					<div class="bl-card-article-left ">
-						<router-link to="/article"><h3>{{article.title}}</h3></router-link>
+						<h3 @click="goToTitle(article.authorId)">{{article.title}}</h3>
 						<ul>{{article.sketch}}</ul>
 						<div class="heat bl-row">
+							<!-- <ul>{{article.nickname}}</ul> -->
 							<ul>赞数:{{article.likeAccount}}个</ul>
 							<ul>评论数:{{article.commentAccount}}个</ul>
 						</div>
@@ -61,7 +62,7 @@
 	export default{
 		data(){
 			return{
-				// users:[],
+				users:[],
 				articles :[]
 			}
 		},
@@ -71,22 +72,12 @@
 				this.articles = response.data.data;
 				console.log(response.data.data);
 			})
-			// this.axios.get('http://localhost:8080/sign-in').then(response=>{
-			// 	this.users = response.data.data;
-			// 	console.log(response.data.data);
-			// })
 		},
-		// methods:{
-		// 	changeThumbUps1(user) {
-		// 		if (user.isThumbUp == true) {
-		// 			user.isThumbUp = false
-		// 			user.praiseCount++
-		// 		} else {
-		// 			user.isThumbUp = true
-		// 			user.praiseCount--
-		// 		}
-		// 	 },
-		// }
+		methods:{
+			goToTitle (id){
+				this.$router.push('/Article?id=' + id);
+			}
+		}
 	}
 	
 	

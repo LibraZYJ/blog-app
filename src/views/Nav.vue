@@ -28,7 +28,6 @@
 				</li>
 				<li class="nav-item" v-if="this.user" @click="logout" id="logout">退出</li>
 			</div>
-			
 		</div>
 
 		<div>
@@ -39,9 +38,9 @@
 
 <script>
 	export default {
-	  data () {
+	  data() {
 	    return {
-	      user: JSON.parse(localStorage.user)
+	      user: JSON.parse(localStorage.getItem('user'))
 	    }
 	  },
 	  created: function () {
