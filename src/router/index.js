@@ -9,7 +9,11 @@ import Message from '@/views/Message.vue'
 import Profile from '@/views/Profile.vue'
 import FromMessage from '@/views/FromMessage.vue'
 import ToMessage from '@/views/ToMessage.vue'
-import Article	from '@/views/Article.vue'
+import Articles	from '@/views/Articles.vue'
+import ArticleDetail from '@/views/ArticleDetail.vue'
+import Topics from '@/views/Topics.vue'
+// import TopicDetail from '@/views/TopicDetail.vue'
+
 
 Vue.use(VueRouter)
 
@@ -26,6 +30,14 @@ const routes = [
 			path:'index',
 			component : Index
 		},
+		{
+			path: 'topics',
+			component: Topics
+		},
+		// {
+		// 	path: 'topic/:id',
+		// 	component: TopicDetail
+		// },
 		{
 			path:'message',
 			component : Message,
@@ -46,8 +58,12 @@ const routes = [
 			component : Profile
 		},
 		{
-			path:'article',
-			component : Article
+			path: 'articles',
+			component: Articles
+		},
+		{
+			path:'article/:id',
+			component : ArticleDetail
 		}
 		
 	]
