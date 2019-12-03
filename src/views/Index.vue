@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="bl-container">
 		<div class="bl-row main">
 			<!-- 回到顶部按钮 -->
 			<div class="bl-backtop" style="right: 40px;" :bottom="100">

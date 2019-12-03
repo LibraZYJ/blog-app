@@ -1,5 +1,5 @@
 <template>
-	<div class="bl-df-column bl-df-center ">
+	<div class="bl-container bl-df-column bl-df-center ">
 		<h2>专题</h2>
 		<div class="row bl-df-center">
 			
@@ -108,5 +108,6 @@
 		color: rgb(0, 98, 89);
 		font-weight: 700;
 	}
+	
 	
 </style>

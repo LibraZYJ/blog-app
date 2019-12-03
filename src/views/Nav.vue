@@ -16,19 +16,24 @@
 					<li>
 						<router-link to="/topics">专题</router-link>
 					</li>
-					
-					</ul>
+					<li>
+						<router-link to="/board">留言板</router-link>
+					</li>
+					<li>
+						<router-link to="/Text9">9宫格</router-link>
+					</li>
+				</ul>
 			</div>
 			<!-- 搜索框 -->
 			<div class=" ivu-input-wrapper ivu-input-wrapper-default ivu-input-type-text ivu-input-group ivu-input-group-default ivu-input-group-with-append ivu-input-with-search" style="margin-top: 6px;"><!----> <!----> 
-				<i class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i> 
-				<input autocomplete="off" spellcheck="false" type="text" placeholder="Enter something..." class="ivu-input ivu-input-default"> 
-				<div class="ivu-input-group-append ivu-input-search">Search</div>
+				<i class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate" ></i>
+				<input autocomplete="off" spellcheck="false" type="text" placeholder="Enter something..." v-model="keywords" class="ivu-input ivu-input-default"> 
+				<div class="ivu-input-group-append ivu-input-search" @click="search">Search</div>
 			</div>
 			<!-- 登录/注销 -->
 			<div class="bl-df-right">	
 				<li>
-					<router-link to="/login" v-if="!this.user">登录</router-link>
+					<router-link to="/login-in" v-if="!this.user">登录</router-link>
 				</li>
 				<li class="nav-item" v-if="this.user">
 					<router-link to="/profile"><img :src="this.user.avatar" class="bl-avatar" /></router-link>
@@ -38,30 +43,43 @@
 		</div>
 
 		<div>
-			<router-view class="bl-container"/>
+			<router-view class=""/>
 		</div>
 	</div>
 </template>
 
 <script>
 	export default {
-	  data() {
-	    return {
-	      user: JSON.parse(localStorage.getItem('user'))
-	    }
-	  },
-	  created: function () {
-	    if (this.user) {
-	      console.log(this.user)
-	    }
-	  },
-	  methods:{
-	    logout () {
-	        alert('确定要注销吗')
-	        this.user = null
-	        localStorage.clear()
-	    }
-	  }
+		  data() {
+			return {
+				user: JSON.parse(localStorage.getItem('user')),
+				keywords:''
+			  
+			};
+		  },
+		  created: function () {
+			if (this.user) {
+			  console.log(this.user)
+			}
+		  },
+		  
+		methods:{
+			logout () {
+				alert('确定要注销吗')
+				this.user = null
+				localStorage.clear()
+			},
+			
+			search(){
+				let cp = this.$route.path;
+				alert(cp);
+				if(cp != '/searh' || cp != '/search/article' || cp != "/search/topic" || cp != "/search/user"){	
+					this.$router.push({ path: '/search',query:{keywords:this.keywords}});
+				}else{
+					this.$router.push({ path: '/empty',query:{keywords:this.keywords}});
+				}
+			}
+		  }
 	}
 </script>
 

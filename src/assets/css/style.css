@@ -2,12 +2,12 @@
 /*全局设定*/
 @font-face {
   font-family: 'iconfont';  /* project id 1528934 */
-  src: url('//at.alicdn.com/t/font_1528934_ul205fo5m4.eot');
-  src: url('//at.alicdn.com/t/font_1528934_ul205fo5m4.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1528934_ul205fo5m4.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1528934_ul205fo5m4.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1528934_ul205fo5m4.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1528934_ul205fo5m4.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1528934_mh2os1k472.eot');
+  src: url('//at.alicdn.com/t/font_1528934_mh2os1k472.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1528934_mh2os1k472.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1528934_mh2os1k472.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1528934_mh2os1k472.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1528934_mh2os1k472.svg#iconfont') format('svg');
 }
 	.iconfont{
 	    font-family:"iconfont" !important;
@@ -32,6 +32,7 @@ a {
 
 ul{
 	list-style: none;
+	
 }
 
 /* 全局布局 */

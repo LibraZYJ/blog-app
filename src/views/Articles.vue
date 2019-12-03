@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="bl-container">
 		<div class="row bl-df-center">
 			<h2>文章</h2>
 			<div v-for="(item, index) in articles" :key="index" class="row" >
